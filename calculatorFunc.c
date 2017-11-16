@@ -1,3 +1,5 @@
+
+/*Caluculates the the voltages through a circuit, when resistans and current is known*/
 double ohms_lag(double r, double i){
     double u = i * r;
     return u;

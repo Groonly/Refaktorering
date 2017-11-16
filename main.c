@@ -5,7 +5,6 @@ Ström upp till 440 Ampere(I), effekter P i watt(W). 3 faser upp till 400V mella
 även tar denna upp Skenbar effekt vid 3-fas och enfas, aktiv effekt vid 3-fas och enfas där cosinus fi/cosinus() används
 som effektfaktorn som är mindre än 1 och inte mindre än 0.
 Frekvenser i (Hz):  och totala motståndet i parallellkopplade kretsar med max 3 motstånd.
-
 50 Hertz(Hz) Finns det i våra uttag i sverige Vid 50 Hz byter spänningen polaritet och strömmen riktning 100 gånger per
 sekund. Spänningen i svenska eluttag pendlar upp och ner från -325 V till +325 V. Att vi talar om 230 V beror på att det
 är spänningens(växelström ~) effektivvärde eller roten ur. Spänningen V(U)=Toppvärdet/sqrt(2)=325V/sqrt(2).
@@ -17,7 +16,6 @@ SKENBAR EFFEKT ENFAS ~: Skenbar(S/VA)=U*I
 AKTIV EFFEKT/MEDELEFFEKT ENFAS ~:P=U*I*cos()
 SKENBAR EFFEKT 3-FAS ~: Skenbar S/VA=U*I*sqrt(3)
 AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
-
 */
 #include <stdio.h>
 #include <stdlib.h>
