@@ -35,3 +35,13 @@ double aktiv_3fas(double u, double i, double cos){
     double p = u * i * sqrt(3) * cos;
     return p;
 }
+/*Output disered text to prompt, set disered input min and max*/
+double get_double(char *outputText, double min, double max){
+  double inputValue;
+  do{
+    printf("%s", outputText);
+    scanf("%lf", &inputValue);
+  }while(inputValue < min || inputValue > max)
+
+  return value;
+}

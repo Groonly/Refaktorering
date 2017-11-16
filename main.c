@@ -50,14 +50,7 @@ int main()
             printf("Ohms lag sp�nningen(volt/V) bet�ckning U lika med Resistansen(Ohm) bet�ckning R \n");
             printf("g�nger Str�mmen(Ampere) med bet�ckningen I. Kort U=R*I. \n\n");
             double r, i;
-            printf("Skriv resistans R < 20 000ohm: \n ");
-            scanf("%lf", &r);
-            if(r > 20000)
-            {
-                printf("F�r h�gt v�rde, f�rs�k igen: \n");
-                continue;
-            }
-
+            r = get_double("Skriv resistans R < 20 000ohm:\n", 0, 20000);
             printf("Skriv str�m I < 440 Ampere: \n");
             scanf("%lf", &i);
             if(i > 440)
