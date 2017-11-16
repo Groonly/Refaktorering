@@ -1,4 +1,5 @@
-
+#include <math.h>
+#include <stdio.h>
 /*Caluculates the the voltages through a circuit, when resistans and current is known*/
 double ohms_lag(double r, double i);
 
