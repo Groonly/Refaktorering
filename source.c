@@ -24,12 +24,19 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 #include "calculatorFunc.h"
 int main()
 {
-    //system("chcp 1252");
+    enum choices{
+      OhmsLag = 1, Rtot = 2, EffektlagenEnkel= 3,
+      SkenbarEffektEnfas= 4, AktivEffektEnfas= 5,
+      SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
+      Exit= 0
+    };
+    enum choices choice;
+
     system("cls");
     bool exit = false;
     while (exit == false)
     {
-        system("cls");
+        //system("cls");
         int val;
         double r, i, u, cos;
         printf("V\x84lj vilka storheter du vill ber\x84kna:\n");
@@ -42,15 +49,15 @@ int main()
         printf("V\x84lj 7 f\x94r: AKTIV EFFEKT 3-FAS\n");
         printf("V\x84lj 0 f\x94r: F\x94R ATT AVSLUTA\n");
         scanf("%d", &val);
-        if(val == 1)
+        if(val == OhmsLag)
         {
-          printf("Ohms lag sp\x84nningen(volt/V) bet\x84ckning U lika med Resistansen(Ohm) bet\x84ckning R\n"
+          printf("Ohms lag sp\x84nningen(volt/V) bet\x84/ckning U lika med Resistansen(Ohm) bet\x84ckning R\n"
           "g\x86nger Str\x94mmen(Ampere) med bet\x84ckningen I. Kort U=R*I. \n\n");
           r = get_double("Skriv resistans R < 20 000ohm:\n", 0, 20000);
           i = get_double("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
           printf("%f V\n", ohms_lag(r, i));
         }
-        else if(val == 2)
+        else if(val == Rtot)
         {
           printf("Resistans sammankopplade i parallella kretsar \x84r lika med 1 delat Resistans R total \x84r lika med\n");
           printf("Resistans 1/R1 + 1/R2 + 1/R3 d\x86 vi h\x94gst anv\x84nder tre resistanser.\n\n");
@@ -60,7 +67,7 @@ int main()
           r3 = get_double("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
           printf("%f Ohm\n", res_tot(r1, r2, r3));
         }
-        else if(val == 3)
+        else if(val == EffektlagenEnkel)
         {
           printf("Effektlagen enkel f\x86r likstr\x94m \x84r effekten P i Watt (W) lika med sp\x84nningen U i volt(V)\n");
           printf("g\x86nger str\x94mmen I i Ampere(A): \n\n");
@@ -68,7 +75,7 @@ int main()
           i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
           printf("%f W\n", eff_enk(u, i));
         }
-        else if(val == 4)
+        else if(val == SkenbarEffektEnfas)
         {
           printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n");
           printf("g\x86nger str\x94mmen I i ampere(A)\n\n");
@@ -76,7 +83,7 @@ int main()
           i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
           printf("%f VA\n", sken_eff(u, i));
         }
-        else if(val == 5)
+        else if(val == AktivEffektEnfas)
         {
           printf("Aktiv medelefdekt enfas \x84r lika med effekt P i watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I \n");
           printf("i Ampere g\x86nger cosinus fi/efkektfaktor < 1:\n\n");
@@ -85,7 +92,7 @@ int main()
           cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
           printf("%f W\n", aktiv_eff(u, i, cos));
         }
-        else if(val == 6)
+        else if(val == SkenbarEffektTrefas)
         {
           printf("3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n");
           printf("g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n");
@@ -93,7 +100,7 @@ int main()
           i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
           printf("%f VA\n", sken_3fas(u, i));
         }
-        else if(val == 7)
+        else if(val == AktivEffektTrefas)
         {
           printf("3-fas aktiv effekt \x84r effekten P i Watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I i ampere(A)\n");
           printf("g\x86nger cos < 1 && cos > 0 g\x86nger roten ur 3 SQRT(3).\n\n");
@@ -102,7 +109,7 @@ int main()
           cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
           printf("%f W\n", aktiv_3fas(u ,i, cos));
         }
-        else if (val == 0)
+        else if (val == Exit)
         {
             exit = true;
         }
