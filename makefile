@@ -1,14 +1,14 @@
 all:calculator
 
-calculator: main.o calculatorFunc.o
-	gcc -o calculator main.o calculatorFunc.o
+calculator: source.o calculatorFunc.o
+	gcc -o calculator source.o calculatorFunc.o
 
-main.o:
-	gcc -c main.c
+source.o:
+	gcc -c source.c
 
 calculatorFunc.o:
 	gcc -c calculatorFunc.c
-	
+
 clean:
 	rm \*.o
 	rm \*.exe

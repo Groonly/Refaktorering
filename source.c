@@ -1,4 +1,3 @@
-
 /*Detta program är en räknare som kan användas för ellära med enbart växelspänningar och växelströmmar. Räknaren
 tar upp räkning med spänningar i volt(U), resistanser upp till 20 000/ohm(R).
 Ström upp till 440 Ampere(I), effekter P i watt(W). 3 faser upp till 400V mellan faserna.
@@ -18,7 +17,7 @@ SKENBAR EFFEKT 3-FAS ~: Skenbar S/VA=U*I*sqrt(3)
 AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 */
 
-#include <windows.h>
+#include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -26,17 +25,16 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 #include "calculatorFunc.h"
 int main()
 {
-    system("CHCP 1252");
+    //system("CHCP 1252");
     system("cls");
     bool exit = false;
 
     while (exit == false)
     {
         system("cls");
-        printf("\x86\n");
         int val;
         double r, i, u, cos;
-        printf("V�lj vilka storheter du vill ber\x84kna:\n");
+        printf("V\x84lj vilka storheter du vill ber\x84kna:\n");
         printf("V\x84lj 1 f\x94r: OHMS LAG\n");
         printf("V\x84lj 2 f\x94r: Rtot\n");
         printf("V\x84lj 3 f\x94r: EFFEKTLAGEN ENKEL\n");
