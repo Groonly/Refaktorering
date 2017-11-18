@@ -4,7 +4,7 @@ double ohms_lag(double r, double i){
     double u = i * r;
     return u;
 }
-
+/*Caluculates the the voltages through a circuit, when resistans and current is known*/
 double res_tot(double r1, double r2, double r3){
     double rtot= (1/r1) + (1/r2) + (1/r3);
     rtot= 1/rtot;

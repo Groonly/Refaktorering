@@ -48,17 +48,18 @@ int main()
         printf("V\x84lj 7 f\x94r: AKTIV EFFEKT 3-FAS\n");
         printf("V\x84lj 0 f\x94r: F\x94R ATT AVSLUTA\n");
         scanf("%d", &val);
+
         switch(val){
           case OhmsLag:
-            printf("Ohms lag sp\x84nningen(volt/V) bet\x84/ckning U lika med Resistansen(Ohm) bet\x84ckning R\n"
-            "g\x86nger Str\x94mmen(Ampere) med bet\x84ckningen I. Kort U=R*I. \n\n");
+            printf("Ohms lag sp\x84nningen(volt/V) bet\x84""ckning U lika med Resistansen(Ohm) bet\x84""ckning R\n"
+            "g\x86nger Str\x94mmen(Ampere) med bet\x84""ckningen I. Kort U=R*I. \n\n");
             r = get_double("Skriv resistans R < 20 000ohm:\n", 0, 20000);
             i = get_double("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
             printf("%f V\n", ohms_lag(r, i));
             break;
           case Rtot:
-            printf("Resistans sammankopplade i parallella kretsar \x84r lika med 1 delat Resistans R total \x84r lika med\n");
-            printf("Resistans 1/R1 + 1/R2 + 1/R3 d\x86 vi h\x94gst anv\x84nder tre resistanser.\n\n");
+            printf("Resistans sammankopplade i parallella kretsar \x84r lika med 1 delat Resistans R total \x84r lika med\n"
+            "Resistans 1/R1 + 1/R2 + 1/R3 d\x86 vi h\x94gst anv\x84nder tre resistanser.\n\n");
             double r1,r2,r3;
             r1 = get_double("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
             r2 = get_double("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
@@ -66,36 +67,36 @@ int main()
             printf("%f Ohm\n", res_tot(r1, r2, r3));
             break;
           case EffektlagenEnkel:
-            printf("Effektlagen enkel f\x86r likstr\x94m \x84r effekten P i Watt (W) lika med sp\x84nningen U i volt(V)\n");
-            printf("g\x86nger str\x94mmen I i Ampere(A): \n\n");
+            printf("Effektlagen enkel f\x86r likstr\x94m \x84r effekten P i Watt (W) lika med sp\x84nningen U i volt(V)\n"
+            "g\x86nger str\x94mmen I i Ampere(A): \n\n");
             u = get_double("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
             printf("%f W\n", eff_enk(u, i));
             break;
           case SkenbarEffektEnfas:
-            printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n");
-            printf("g\x86nger str\x94mmen I i ampere(A)\n\n");
+            printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n"
+            "g\x86nger str\x94mmen I i ampere(A)\n\n");
             u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
             printf("%f VA\n", sken_eff(u, i));
             break;
           case AktivEffektEnfas:
-            printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n");
-            printf("g\x86nger str\x94mmen I i ampere(A)\n\n");
+            printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n"
+            "g\x86nger str\x94mmen I i ampere(A)\n\n");
             u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
             printf("%f VA\n", sken_eff(u, i));
             break;
           case SkenbarEffektTrefas:
-            printf("3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n");
-            printf("g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n");
+            printf("3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n"
+            "g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n");
             u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
             printf("%f VA\n", sken_3fas(u, i));
             break;
           case AktivEffektTrefas:
-            printf("3-fas aktiv effekt \x84r effekten P i Watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I i ampere(A)\n");
-            printf("g\x86nger cos < 1 && cos > 0 g\x86nger roten ur 3 SQRT(3).\n\n");
+            printf("3-fas aktiv effekt \x84r effekten P i Watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I i ampere(A)\n"
+            "g\x86nger cos < 1 && cos > 0 g\x86nger roten ur 3 SQRT(3).\n\n");
             u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
             cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
@@ -107,77 +108,6 @@ int main()
           default:
             printf("Fel alternativ f\x94rs\x94k igen!:\n");
         }
-/*
-        if(val == OhmsLag)
-        {
-          printf("Ohms lag sp\x84nningen(volt/V) bet\x84/ckning U lika med Resistansen(Ohm) bet\x84ckning R\n"
-          "g\x86nger Str\x94mmen(Ampere) med bet\x84ckningen I. Kort U=R*I. \n\n");
-          r = get_double("Skriv resistans R < 20 000ohm:\n", 0, 20000);
-          i = get_double("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
-          printf("%f V\n", ohms_lag(r, i));
-        }
-        else if(val == Rtot)
-        {
-          printf("Resistans sammankopplade i parallella kretsar \x84r lika med 1 delat Resistans R total \x84r lika med\n");
-          printf("Resistans 1/R1 + 1/R2 + 1/R3 d\x86 vi h\x94gst anv\x84nder tre resistanser.\n\n");
-          double r1,r2,r3;
-          r1 = get_double("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
-          r2 = get_double("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
-          r3 = get_double("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
-          printf("%f Ohm\n", res_tot(r1, r2, r3));
-        }
-        else if(val == EffektlagenEnkel)
-        {
-          printf("Effektlagen enkel f\x86r likstr\x94m \x84r effekten P i Watt (W) lika med sp\x84nningen U i volt(V)\n");
-          printf("g\x86nger str\x94mmen I i Ampere(A): \n\n");
-          u = get_double("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
-          i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-          printf("%f W\n", eff_enk(u, i));
-        }
-        else if(val == SkenbarEffektEnfas)
-        {
-          printf("Skenbar effekt enfas r\x84knas med storheten VA(VoltAmpere) som \x84r lika med sp\x84nningen U i volt(V)\n");
-          printf("g\x86nger str\x94mmen I i ampere(A)\n\n");
-          u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-          i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-          printf("%f VA\n", sken_eff(u, i));
-        }
-        else if(val == AktivEffektEnfas)
-        {
-          printf("Aktiv medelefdekt enfas \x84r lika med effekt P i watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I \n");
-          printf("i Ampere g\x86nger cosinus fi/efkektfaktor < 1:\n\n");
-          u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-          i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-          cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-          printf("%f W\n", aktiv_eff(u, i, cos));
-        }
-        else if(val == SkenbarEffektTrefas)
-        {
-          printf("3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n");
-          printf("g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n");
-          u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-          i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-          printf("%f VA\n", sken_3fas(u, i));
-        }
-        else if(val == AktivEffektTrefas)
-        {
-          printf("3-fas aktiv effekt \x84r effekten P i Watt(W) lika med sp\x84nningen U i volt(V) g\x86nger str\x94mmen I i ampere(A)\n");
-          printf("g\x86nger cos < 1 && cos > 0 g\x86nger roten ur 3 SQRT(3).\n\n");
-          u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-          i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-          cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-          printf("%f W\n", aktiv_3fas(u ,i, cos));
-        }
-        else if (val == Exit)
-        {
-            exit = true;
-        }
-        else
-        {
-            printf("Fel alternativ f\x94rs\x94k igen!:\n");
-        }
-      */
     }
-
     return 0;
 }
