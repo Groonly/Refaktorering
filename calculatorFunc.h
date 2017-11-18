@@ -3,7 +3,6 @@
 /*Caluculates the the voltages through a circuit, when resistans and current is known*/
 double ohms_lag(double r, double i);
 
-
 double res_tot(double r1, double r2, double r3);
 
 double eff_enk(double u, double i);

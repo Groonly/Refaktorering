@@ -15,13 +15,13 @@ AKTIV EFFEKT/MEDELEFFEKT ENFAS ~:P=U*I*cos()
 SKENBAR EFFEKT 3-FAS ~: Skenbar S/VA=U*I*sqrt(3)
 AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 */
-
 #include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
 #include <stdbool.h>
 #include "calculatorFunc.h"
+
 int main()
 {
     enum choices{
