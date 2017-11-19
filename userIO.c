@@ -16,7 +16,7 @@ return val;
 }
 
 /*Prints choosen text*/
-char* printOperationInfo(int choice){
+char* operationInfo(int choice){
   static char *outputText[10];
   outputText[1] = "Ohms lag sp\x84nningen(volt/V) bet\x84""ckning U lika med Resistansen(Ohm) bet\x84""ckning R\n"
                   "g\x86nger Str\x94mmen(Ampere) med bet\x84""ckningen I. Kort U=R*I. \n\n";
