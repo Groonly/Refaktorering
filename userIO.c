@@ -15,7 +15,7 @@ scanf("%d", &val);
 return val;
 }
 
-/*Prints choosen text*/
+/*Returns choosen hardcoded text*/
 char* operationInfo(int choice){
   static char *outputText[10];
   outputText[1] = "Ohms lag sp\x84nningen(volt/V) bet\x84""ckning U lika med Resistansen(Ohm) bet\x84""ckning R\n"
