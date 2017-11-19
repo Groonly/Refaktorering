@@ -67,7 +67,8 @@ int main()
             printf("%s",operationInfo(AktivEffektEnfas));
             u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
             i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f VA\n", sken_eff(u, i));
+            cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
+            printf("%f VA\n", aktiv_eff(u, i, cos));
             break;
           case SkenbarEffektTrefas:
             printf("%s",operationInfo(SkenbarEffektTrefas));
