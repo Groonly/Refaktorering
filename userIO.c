@@ -16,7 +16,7 @@ return val;
 }
 
 /*Prints choosen text*/
-void printOperationInfo(int choice){
+char* printOperationInfo(int choice){
   static char *outputText[10];
   outputText[1] = "Ohms lag sp\x84nningen(volt/V) bet\x84""ckning U lika med Resistansen(Ohm) bet\x84""ckning R\n"
                   "g\x86nger Str\x94mmen(Ampere) med bet\x84""ckningen I. Kort U=R*I. \n\n";
@@ -39,7 +39,7 @@ void printOperationInfo(int choice){
   outputText[7] = "3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n"
                   "g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n";
 
-  printf(outputText[choice]);
+  return outputText[choice];
 }
 
 

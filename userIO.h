@@ -2,6 +2,6 @@
 
 int menuChoice(void);
 
-void printOperationInfo(int choice);
+char* printOperationInfo(int choice);
 
 double get_double(char *outputText, double min, double max);
