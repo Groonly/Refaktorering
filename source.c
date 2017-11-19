@@ -15,6 +15,7 @@ AKTIV EFFEKT/MEDELEFFEKT ENFAS ~:P=U*I*cos()
 SKENBAR EFFEKT 3-FAS ~: Skenbar S/VA=U*I*sqrt(3)
 AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 */
+
 #include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,19 +26,17 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 
 int main()
 {
-
     enum choices{
       OhmsLag = 1, Rtot = 2, EffektlagenEnkel= 3,
       SkenbarEffektEnfas= 4, AktivEffektEnfas= 5,
       SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
       Exit= 0
     };
-
-    system("cls");
+    double r, r1, r2, r3, i, u, cos;
     bool exit = false;
+    system("cls");
     while (exit == false)
     {
-        double r, r1, r2, r3, i, u, cos;
         switch(menuChoice()){
           case OhmsLag:
             printOperationInfo(OhmsLag);

@@ -40,7 +40,6 @@ void printOperationInfo(int choice){
                   "g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n";
 
   printf(outputText[choice]);
-
 }
 
 
