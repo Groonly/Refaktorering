@@ -15,5 +15,3 @@ double sken_3fas(double u, double i);
 
 
 double aktiv_3fas(double u, double i, double cos);
-
-double get_double(char *outputText, double min, double max);
