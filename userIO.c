@@ -1,5 +1,5 @@
 #include "userIO.h"
-
+/*Scans and return input chooise*/
 int menuChoice(void){
 int val;
 printf("V\x84lj vilka storheter du vill ber\x84kna:\n");
@@ -15,7 +15,7 @@ scanf("%d", &val);
 return val;
 }
 
-
+/*Prints choosen text*/
 void printOperationInfo(int choice){
   static char *outputText[10];
   outputText[1] = "Ohms lag sp\x84nningen(volt/V) bet\x84""ckning U lika med Resistansen(Ohm) bet\x84""ckning R\n"
