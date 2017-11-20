@@ -1,1 +1,1 @@
-# Refaktorering
+# Refaktorering av Marcus kod

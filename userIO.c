@@ -43,8 +43,8 @@ char* operationInfo(int choice){
 }
 
 
-/*Output disered text to prompt, set disered input min and max*/
-double get_double(char *outputText, double min, double max){
+/*Outputs disered text to prompt, set disered input min and max*/
+double getDouble(char *outputText, double min, double max){
   double inputValue;
   do{
     printf("%s", outputText);

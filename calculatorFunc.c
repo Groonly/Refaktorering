@@ -1,35 +1,26 @@
 #include "calculatorFunc.h"
-double ohms_lag(double r, double i){
-    double u = i * r;
-    return u;
+/*Calculates Voltage when resistance and current is known */
+double ohmsLag(double r, double i){
+    return i * r;
 }
-double res_tot(double r1, double r2, double r3){
-    double rtot= (1/r1) + (1/r2) + (1/r3);
-    rtot= 1/rtot;
-    return rtot;
+/*Calculates resistance for three resistors in parallel*/
+double resTot(double r1, double r2, double r3){
+    return 1/((1/r1) + (1/r2) + (1/r3));
 }
-
-double eff_enk(double u, double i){
-    double p = u * i;
-    return p;
+/*Calculates power when voltage and current is known*/
+double effEnk(double u, double i){
+    return u * i;
 }
-
-double sken_eff(double u, double i){
-    double s = u * i;
-    return s;
+/**/
+double skenEff(double u, double i){
+    return u * i;
 }
-
-double aktiv_eff(double u, double i, double cos){
-    double p = u * i * cos;
-    return p;
+double aktivEff(double u, double i, double cos){
+    return u * i * cos;
 }
-
-double sken_3fas(double u, double i){
-    double s = u * i * sqrt(3);
-    return s;
+double skenTreFas(double u, double i){
+    return u * i * sqrt(3);
 }
-
-double aktiv_3fas(double u, double i, double cos){
-    double p = u * i * sqrt(3) * cos;
-    return p;
+double aktivTreFas(double u, double i, double cos){
+    return u * i * sqrt(3) * cos;
 }

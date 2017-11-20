@@ -40,48 +40,48 @@ int main()
         switch(menuChoice()){
           case OhmsLag:
             printf("%s", operationInfo(OhmsLag));
-            r = get_double("Skriv resistans R < 20 000ohm:\n", 0, 20000);
-            i = get_double("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
-            printf("%f V\n", ohms_lag(r, i));
+            r = getDouble("Skriv resistans R < 20 000ohm:\n", 0, 20000);
+            i = getDouble("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
+            printf("%f V\n", ohmsLag(r, i));
             break;
           case Rtot:
             printf("%s",operationInfo(Rtot));
-            r1 = get_double("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
-            r2 = get_double("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
-            r3 = get_double("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
-            printf("%f Ohm\n", res_tot(r1, r2, r3));
+            r1 = getDouble("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
+            r2 = getDouble("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
+            r3 = getDouble("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
+            printf("%f Ohm\n", resTot(r1, r2, r3));
             break;
           case EffektlagenEnkel:
             printf("%s",operationInfo(EffektlagenEnkel));
-            u = get_double("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
-            i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f W\n", eff_enk(u, i));
+            u = getDouble("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
+            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+            printf("%f W\n", effEnk(u, i));
             break;
           case SkenbarEffektEnfas:
             printf("%s",operationInfo(SkenbarEffektEnfas));
-            u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-            i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f VA\n", sken_eff(u, i));
+            u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
+            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+            printf("%f VA\n", skenEff(u, i));
             break;
           case AktivEffektEnfas:
             printf("%s",operationInfo(AktivEffektEnfas));
-            u = get_double("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-            i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-            printf("%f VA\n", aktiv_eff(u, i, cos));
+            u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
+            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+            cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
+            printf("%f VA\n", aktivEff(u, i, cos));
             break;
           case SkenbarEffektTrefas:
             printf("%s",operationInfo(SkenbarEffektTrefas));
-            u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-            i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f VA\n", sken_3fas(u, i));
+            u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
+            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+            printf("%f VA\n", skenTreFas(u, i));
             break;
           case AktivEffektTrefas:
             printf("%s",operationInfo(AktivEffektTrefas));
-            u = get_double("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-            i = get_double("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            cos = get_double("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-            printf("%f W\n", aktiv_3fas(u ,i, cos));
+            u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
+            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+            cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
+            printf("%f W\n", aktivTreFas(u ,i, cos));
             break;
           case Exit:
             exit = true;

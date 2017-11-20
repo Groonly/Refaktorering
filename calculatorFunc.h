@@ -1,16 +1,16 @@
 #include <math.h>
 #include <stdio.h>
 /*Caluculates the the voltages through a circuit, when resistans and current is known*/
-double ohms_lag(double r, double i);
+double ohmsLag(double r, double i);
 
-double res_tot(double r1, double r2, double r3);
+double resTot(double r1, double r2, double r3);
 
-double eff_enk(double u, double i);
+double effEnk(double u, double i);
 
-double sken_eff(double u, double i);
+double skenEff(double u, double i);
 
-double aktiv_eff(double u, double i, double cos);
+double aktivEff(double u, double i, double cos);
 
-double sken_3fas(double u, double i);
+double skenTreFas(double u, double i);
 
-double aktiv_3fas(double u, double i, double cos);
+double aktivTreFas(double u, double i, double cos);
