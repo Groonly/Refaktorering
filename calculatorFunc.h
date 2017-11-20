@@ -15,4 +15,4 @@ double skenTreFas(double u, double i);
 
 double aktivTreFas(double u, double i, double cos);
 
-double KwattPris(double watt, double pris);
+double kwattPris(double watt, double pris);
