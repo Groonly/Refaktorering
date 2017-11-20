@@ -31,69 +31,34 @@ int main()
       SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
       KwattPris = 8, Exit= 0
     };
-    double r, r1, r2, r3, i, u, cos;
+
     bool exit = false;
     system("cls");
     while (exit == false)
     {
         switch(menuChoice()){
           case OhmsLag:
-            /*printf("%s", operationInfo(OhmsLag));
-            r = getDouble("Skriv resistans R < 20 000ohm:\n", 0, 20000);
-            i = getDouble("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
-            printf("%f V\n", ohmsLag(r, i));*/
             callOperation(OhmsLag);
             break;
           case Rtot:
-            /*printf("%s",operationInfo(Rtot));
-            r1 = getDouble("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
-            r2 = getDouble("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
-            r3 = getDouble("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
-            printf("%f Ohm\n", resTot(r1, r2, r3));*/
             callOperation(Rtot);
             break;
           case EffektlagenEnkel:
-            /*printf("%s",operationInfo(EffektlagenEnkel));
-            u = getDouble("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
-            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f W\n", effEnk(u, i));*/
             callOperation(EffektlagenEnkel);
             break;
           case SkenbarEffektEnfas:
-            /*printf("%s",operationInfo(SkenbarEffektEnfas));
-            u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f VA\n", skenEff(u, i));*/
             callOperation(SkenbarEffektEnfas);
             break;
           case AktivEffektEnfas:
-            /*printf("%s",operationInfo(AktivEffektEnfas));
-            u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-            printf("%f VA\n", aktivEff(u, i, cos));*/
             callOperation(AktivEffektEnfas);
             break;
           case SkenbarEffektTrefas:
-            /*printf("%s",operationInfo(SkenbarEffektTrefas));
-            u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            printf("%f VA\n", skenTreFas(u, i));*/
             callOperation(SkenbarEffektTrefas);
             break;
           case AktivEffektTrefas:
-            /*printf("%s",operationInfo(AktivEffektTrefas));
-            u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-            i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-            cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-            printf("%f W\n", aktivTreFas(u ,i, cos));*/
             callOperation(AktivEffektTrefas);
             break;
           case KwattPris:
-            /*printf("%s",operationInfo(KwattPris));
-            u = getDouble("F\x94rbrukad Watt:\n", 0, 1000000);
-            i = getDouble("Pris per Watt:\n", 0, 400);
-            printf("%f Kr/kw", kwattPris(u, i));*/
             callOperation(KwattPris);
             break;
           case Exit:

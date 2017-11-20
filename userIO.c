@@ -1,6 +1,7 @@
 #include "userIO.h"
 #include "calculatorFunc.h"
 
+/*Handle calls to calculator func*/
 void callOperation(int choice){
   double r, r1, r2, r3, i, u, cos;
   enum choices{
@@ -61,7 +62,7 @@ void callOperation(int choice){
         i = getDouble("Pris per Watt:\n", 0, 400);
         printf("%f Kr/kw", kwattPris(u, i));
         break;
-}
+  }
 }
 
 /*Scans and return input chooise*/
