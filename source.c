@@ -30,7 +30,7 @@ int main()
       OhmsLag = 1, Rtot = 2, EffektlagenEnkel= 3,
       SkenbarEffektEnfas= 4, AktivEffektEnfas= 5,
       SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
-      Exit= 0
+      KwattcPris = 8, Exit= 0
     };
     double r, r1, r2, r3, i, u, cos;
     bool exit = false;
@@ -83,6 +83,12 @@ int main()
             cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
             printf("%f W\n", aktivTreFas(u ,i, cos));
             break;
+          case KwattcPris:
+              printf("%s",operationInfo(KwattcPris));
+              u = getDouble("F\x94rbrukad Watt:\n", 0, 1000000);
+              i = getDouble("Pris per Watt:\n", 0, 400);
+              printf("%f Kr/kw", KwattPris(u, i));
+              break;
           case Exit:
             exit = true;
             break;

@@ -10,7 +10,9 @@ printf("V\x84lj 4 f\x94r: SKENBAR EFFEKT ENFAS\n");
 printf("V\x84lj 5 f\x94r: AKTIV EFFEKT/MEDELEFFEKT ENFAS\n");
 printf("V\x84lj 6 fvr: SKENBAR EFFEKT 3-FAS\n");
 printf("V\x84lj 7 f\x94r: AKTIV EFFEKT 3-FAS\n");
+printf("V\x84lj 8 f\x94r:Kwatt pris\n");
 printf("V\x84lj 0 f\x94r: F\x94R ATT AVSLUTA\n");
+
 scanf("%d", &val);
 return val;
 }
@@ -38,6 +40,8 @@ char* operationInfo(int choice){
 
   outputText[7] = "3-fas skenbar effekt \x84r v\x84xelsp\x84nning \x84r skenbar effekt S i voltampere(VA) lika med sp\x84nningen U i volt(V) \n"
                   "g\x86nger str\x94mmen I i ampere(A) g\x86nger roten ur 3 SQRT(3).\n\n";
+
+  outputText[8] = "Kwatt pris ber\x84""knas genom att ta förbrukad el Watt / tusen g\x86""er priset du betalar\n";
 
   return outputText[choice];
 }
