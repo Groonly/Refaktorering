@@ -19,10 +19,8 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 #include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <stdbool.h>
 #include "userIO.h"
-#include "calculatorFunc.h"
 int main()
 {
     enum choices{
@@ -31,7 +29,6 @@ int main()
       SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
       KwattPris = 8, Exit= 0
     };
-
     bool exit = false;
     system("cls");
     while (exit == false)
