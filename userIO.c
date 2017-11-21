@@ -1,71 +1,6 @@
 #include "userIO.h"
 #include "calculatorFunc.h"
 
-
-/*Handle calls to calculator func*/
-void callOperation(int choice){
-  double r, r1, r2, r3, i, u, cos;
-  enum choices{
-    OhmsLag = 1, Rtot = 2, EffektlagenEnkel= 3,
-    SkenbarEffektEnfas= 4, AktivEffektEnfas= 5,
-    SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
-    KwattPris = 8, Exit= 0
-  };
-  switch(choice){
-    case OhmsLag:
-      printf("%s", operationInfo(OhmsLag));
-      r = getDouble("Skriv resistans R < 20 000ohm:\n", 0, 20000);
-      i = getDouble("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
-      printf("%f V\n", ohmsLag(r, i));
-      break;
-    case Rtot:
-      printf("%s",operationInfo(Rtot));
-      r1 = getDouble("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
-      r2 = getDouble("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
-      r3 = getDouble("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
-      printf("%f Ohm\n", resTot(r1, r2, r3));
-      break;
-    case EffektlagenEnkel:
-      printf("%s",operationInfo(EffektlagenEnkel));
-      u = getDouble("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
-      i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-      printf("%f W\n", effEnk(u, i));
-      break;
-    case SkenbarEffektEnfas:
-      printf("%s",operationInfo(SkenbarEffektEnfas));
-      u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-      i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-      printf("%f VA\n", skenEff(u, i));
-      break;
-    case AktivEffektEnfas:
-      printf("%s",operationInfo(AktivEffektEnfas));
-      u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
-      i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-      cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-      printf("%f VA\n", aktivEff(u, i, cos));
-      break;
-    case SkenbarEffektTrefas:
-      printf("%s",operationInfo(SkenbarEffektTrefas));
-      u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-      i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-      printf("%f VA\n", skenTreFas(u, i));
-      break;
-    case AktivEffektTrefas:
-      printf("%s",operationInfo(AktivEffektTrefas));
-      u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
-      i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
-      cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
-      printf("%f W\n", aktivTreFas(u ,i, cos));
-      break;
-    case KwattPris:
-        printf("%s",operationInfo(KwattPris));
-        u = getDouble("F\x94rbrukad Watt:\n", 0, 1000000);
-        i = getDouble("Pris per Watt:\n", 0, 400);
-        printf("%f Kr/kw", kwattPris(u, i));
-        break;
-  }
-}
-
 /*Scans and return input chooise*/
 int menuChoice(void){
   int val;
@@ -83,6 +18,75 @@ int menuChoice(void){
   scanf("%d", &val);
   return val;
 }
+
+void ohmsLagIO(){
+  double r, i;
+  printf("%s", operationInfo(1));
+  r = getDouble("Skriv resistans R < 20 000ohm:\n", 0, 20000);
+  i = getDouble("Skriv str\x94m I < 440 Ampere::\n", 0, 400);
+  printf("%f V\n", ohmsLag(r, i));
+}
+
+void RtorIO(){
+  double r1, r2, r3;
+  printf("%s",operationInfo(2));
+  r1 = getDouble("Skriv resistans R1 < 20 000ohm:\n", 0, 20000);
+  r2 = getDouble("Skriv resistans R2 < 20 000ohm:\n", 0, 20000);
+  r3 = getDouble("Skriv resistans R3 < 20 000ohm:\n", 0, 20000);
+  printf("%f Ohm\n", resTot(r1, r2, r3));
+}
+
+void effektLagenEnkelIO(){
+  double i, u;
+  printf("%s",operationInfo(3));
+  u = getDouble("Skriv sp\x84nnngen U i volt(V):\n", 0, 1000000);
+  i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+  printf("%f W\n", effEnk(u, i));
+}
+
+void skenbarEffektEnfasIO(){
+  double i, u;
+  printf("%s",operationInfo(4));
+  u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
+  i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+  printf("%f VA\n", skenEff(u, i));
+}
+
+void aktivEffektEnfasIO(){
+  double i, u, cos;
+  printf("%s",operationInfo(5));
+  u = getDouble("Skriv Sp\x84nningen U i volt:\n", 0, 10000000);
+  i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+  cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
+  printf("%f VA\n", aktivEff(u, i, cos));
+}
+
+
+void skenbarEffektTrefasIO(){
+  double i, u;
+  printf("%s",operationInfo(6));
+  u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
+  i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+  printf("%f VA\n", skenTreFas(u, i));
+}
+
+void aktivEffektTrefasIO(){
+  double i, u, cos;
+  printf("%s",operationInfo(7));
+  u = getDouble("Skriv sp\x84nning U i volt(V) < 400V:\n", 0, 400);
+  i = getDouble("Skriv str\x94m Ampere I < 440A:\n", 0, 400);
+  cos = getDouble("Skriv in effektfaktorn cos > 0 && cos < 1:\n", 0, 1);
+  printf("%f W\n", aktivTreFas(u ,i, cos));
+}
+
+void kwattPrisIO(){
+    double watt, pris;
+    printf("%s",operationInfo(8));
+    watt = getDouble("F\x94rbrukad Watt:\n", 0, 1000000);
+    pris = getDouble("Pris per Watt:\n", 0, 400);
+    printf("%f Kr/kw", kwattPris(watt, pris));
+}
+
 
 /*Returns choosen hardcoded text*/
 char* operationInfo(int choice){

@@ -36,28 +36,28 @@ int main()
     {
         switch(menuChoice()){
           case OhmsLag:
-            callOperation(OhmsLag);
+            ohmsLagIO();
             break;
           case Rtot:
-            callOperation(Rtot);
+            RtorIO();
             break;
           case EffektlagenEnkel:
-            callOperation(EffektlagenEnkel);
+            effektLagenEnkelIO();
             break;
           case SkenbarEffektEnfas:
-            callOperation(SkenbarEffektEnfas);
+            skenbarEffektEnfasIO();
             break;
           case AktivEffektEnfas:
-            callOperation(AktivEffektEnfas);
+            aktivEffektEnfasIO();
             break;
           case SkenbarEffektTrefas:
-            callOperation(SkenbarEffektTrefas);
+            skenbarEffektTrefasIO();
             break;
           case AktivEffektTrefas:
-            callOperation(AktivEffektTrefas);
+            aktivEffektTrefasIO();
             break;
           case KwattPris:
-            callOperation(KwattPris);
+            kwattPrisIO();
             break;
           case Exit:
             exit = true;
