@@ -29,6 +29,7 @@ int main()
       SkenbarEffektTrefas= 6, AktivEffektTrefas= 7,
       KwattPris = 8, Exit= 0
     };
+
     bool exit = false;
     system("cls");
     while (exit == false)

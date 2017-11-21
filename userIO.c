@@ -1,6 +1,7 @@
 #include "userIO.h"
 #include "calculatorFunc.h"
 
+
 /*Handle calls to calculator func*/
 void callOperation(int choice){
   double r, r1, r2, r3, i, u, cos;

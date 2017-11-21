@@ -5,11 +5,9 @@ DEBUG = -g
 CFLAGS = -Wall -c $(DEBUG)
 LFLAGS = -Wall $(DEBUG)
 
-all: calculator calculator_test
-
+all: calculator calculator_test test
 calculator: $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o calculator
-
 calculator_test: $(TEST)
 	$(CC) $(LFLAGS) $(TEST) -o calculator_test
 
